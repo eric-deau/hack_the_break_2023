@@ -34,12 +34,28 @@
             display: flex;
             scroll-snap-type: x mandatory;
             height: 300px;
+            width: 100%;
+        }
+
+        .carousel::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .carousel {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
         }
 
         .box {
+            border-radius: 6px;
             height: 100%;
             width: 95%;
-            background: red;
+            color: #e1dbd1;
+            background: #712F3E;
+            /* margin: left 5; */
             margin-right: 5px;
             flex-shrink: 0;
             scroll-snap-align: start;
@@ -76,32 +92,30 @@
     <nav id="navbarPlaceholder">
     </nav>
 
-    <div class="container">
-        <div class="row">
-            <h1>Tips For You</h1>
-        </div>
-
-        <template id="tipcardtemplate">
-            <div class="card">
-                <div class="card-body">
-                    <h3 class="card-title">Make Social Connection</h3>
-                    <p class="card-text"> Phone calls and social networks have their place, but few things can beat the
-                        stress-busting, mood-boosting power of quality face-to-face time with other people, especially
-                        those
-                        you love and people who energize you.</p>
-                </div>
-            </div>
-        </template>
-
-
-
-
-        <!-- Generic Wellness tips -->
-        <div class="row">
-            <h1>Tips For Everyone</h1>
-        </div>
-
+    <div class="row">
+        <h1>Tips For You</h1>
     </div>
+
+    <template id="tipcardtemplate">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title">Make Social Connection</h3>
+                <p class="card-text"> Phone calls and social networks have their place, but few things can beat the
+                    stress-busting, mood-boosting power of quality face-to-face time with other people, especially
+                    those
+                    you love and people who energize you.</p>
+            </div>
+        </div>
+    </template>
+
+
+
+
+    <!-- Generic Wellness tips -->
+    <div class="row">
+        <h1>Tips For Everyone</h1>
+    </div>
+
     <div class="carousel">
         <div class="card-body box">
             <h3 class="card-title">Make Social Connection</h3>
@@ -109,12 +123,19 @@
                 stress-busting, mood-boosting power of quality face-to-face time with other people, especially those
                 you love and people who energize you.</p>
         </div>
+
+        <div class="card-body box">
+            <h3 class="card-title">Stay active</h3>
+            <p class="card-text"> Staying active is as good for the brain as it is for the body. Regular exercise or activity can have a major impact on your mental and emotional health, relieve stress, improve memory, and help you sleep better.</p>
+        </div>
+        
         <div class="card-body box">
             <h3 class="card-title">Talk to Someone</h3>
             <p class="card-text">Talk to a friendly face. If you have concerns, stresses or worries, sharing these
                 with someone who cares is one of the most effective ways to calm your nervous system and relieve
                 stress.</p>
         </div>
+
         <div class="card-body box">
             <h3 class="card-title">Appeal to Your Senses</h3>
             <p class="card-text">Does listening to an uplifting song make you feel calm? Does squeezing a stress
@@ -153,7 +174,8 @@
         <div class="box"></div>
     </div>
     <div class="dots">
-        <button class="dot"></button>
+        <button class="dot" href="https://www.google.com/"></button>
+        <!-- <a href="https://www.google.com/" class="" role="button"></a> -->
         <button class="dot"></button>
         <button class="dot"></button>
         <button class="dot"></button>
@@ -258,6 +280,23 @@
 
 
     <!-- <script src="./scripts/script.js"></script> -->
+    <script>
+        const dots = document.querySelector('.dots');
+        dots.addEventListener('click', e => {
+            const target = e.target;
+            if (!target.matches('.dot')) {
+                return;
+            }
+
+            const index = Array.from(dots.children).indexOf(target);
+            const selector = `.box:nth-child(${index + 1})`;
+            const box = document.querySelector(selector)
+            box.scrollIntoView({
+                behavior: 'smooth',
+                inline: 'start'
+            })
+        })
+    </script>
     <script src="./scripts/skeleton.js"></script>
     <script src="./scripts/firebaseAPI.js"></script>
 

@@ -20,76 +20,124 @@
     ></script>
   </head>
 
-  <body><nav id="navbarPlaceholder"></nav>
+  <body>
+    <nav id="navbarPlaceholder"></nav>
     <main>
       <h1>How are you feeling?</h1>
-      <div class="question card">
-        <div class="card-body">
-          <select class="form-select" aria-label="Default select example">
-            <option selected>What...</option>
-            <option value="o1">Option 1</option>
-            <option value="o2">Option 2</option>
-            <option value="o3">Option 3</option>
-          </select>
-          </div>
-        </div>
-      <div class="question card">
-        <div class="card-body">
-          <select class="form-select" aria-label="Default select example">
-            <option selected>How...</option>
-            <option value="o1">Option 1</option>
-            <option value="o2">Option 2</option>
-            <option value="o3">Option 3</option>
-          </select>
-          </div>
-        </div>
-      <div class="question card">
-        <div class="card-body">
-          <select class="form-select" aria-label="Default select example">
-            <option selected>How...</option>
-            <option value="o1">Option 1</option>
-            <option value="o2">Option 2</option>
-            <option value="o3">Option 3</option>
-          </select>
-          </div>
-        </div>
+      <form onsubmit="saveSurveyResults()" action="./tips_main.html">
         <div class="question card">
-        <div class="card-body">
-          <h5 class="card-title">How are you feeling?</h5>
-          <div class="radio-responses">
-            <div class="form-check form-check-inline" id="radio-start">
-              <label class="form-check-label" for="inlineRadio1">
-                <input class="" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                Not great
-              </label>
-            </div>
-            <div class="form-check form-check-inline">
-              <label class="form-check-label" for="inlineRadio2">
-                <input class="" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                &nbsp;</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <label class="form-check-label" for="inlineRadio3">
-                <input class="" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-                &nbsp;</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <label class="form-check-label" for="inlineRadio4">
-                <input class="" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4">
-              &nbsp;</label>
-            </div>
-            <div class="form-check form-check-inline" id="radio-end">
-              <label class="form-check-label" for="inlineRadio5">
-                <input class="" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option5">
-              Wonderful!</label>
-            </div>
+          <div class="card-body">
+            <select
+              class="form-select"
+              id="Q1"
+              aria-label="Default select example"
+            >
+              <option selected>What...</option>
+              <option value="o1">Option 1</option>
+              <option value="o2">Option 2</option>
+              <option value="o3">Option 3</option>
+            </select>
           </div>
+          <div class="card-body">
+            <select
+              class="form-select"
+              id="Q2"
+              aria-label="Default select example"
+            >
+              <option selected>How...</option>
+              <option value="o1">Option 1</option>
+              <option value="o2">Option 2</option>
+              <option value="o3">Option 3</option>
+            </select>
+          </div>
+          <div class="card-body">
+            <select
+              class="form-select"
+              id="Q3"
+              aria-label="Default select example"
+            >
+              <option selected>How...</option>
+              <option value="o1">Option 1</option>
+              <option value="o2">Option 2</option>
+              <option value="o3">Option 3</option>
+            </select>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">How are you feeling?</h5>
+            <div class="radio-responses">
+              <div class="form-check form-check-inline" id="radio-start">
+                <label class="form-check-label" for="inlineRadio1">
+                  <input
+                    class=""
+                    type="radio"
+                    name="inlineRadioOptions"
+                    id="inlineRadio1"
+                    value="option1"
+                    name="feeling"
+                  />
+                  Not great
+                </label>
+              </div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label" for="inlineRadio2">
+                  <input
+                    class=""
+                    type="radio"
+                    name="inlineRadioOptions"
+                    id="inlineRadio2"
+                    value="option2"
+                    name="feeling"
+                  />
+                  &nbsp;</label
+                >
+              </div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label" for="inlineRadio3">
+                  <input
+                    class=""
+                    type="radio"
+                    name="inlineRadioOptions"
+                    id="inlineRadio3"
+                    value="option3"
+                    name="feeling"
+                  />
+                  &nbsp;</label
+                >
+              </div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label" for="inlineRadio4">
+                  <input
+                    class=""
+                    type="radio"
+                    name="inlineRadioOptions"
+                    id="inlineRadio4"
+                    value="option4"
+                    name="feeling"
+                  />
+                  &nbsp;</label
+                >
+              </div>
+              <div class="form-check form-check-inline" id="radio-end">
+                <label class="form-check-label" for="inlineRadio5">
+                  <input
+                    class=""
+                    type="radio"
+                    name="inlineRadioOptions"
+                    id="inlineRadio5"
+                    value="option5"
+                  />
+                  Wonderful!</label
+                >
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+        <input type="submit" value="Submit" />
+      </form>
     </main>
 
     <!-- Body scripts -->
     <script src="./scripts/skeleton.js"></script>
+    <script src="./scripts/survey_main.js"></script>
   </body>
 </html>
