@@ -31,14 +31,14 @@ function displayJournalDynamically(collection) {
                         break;
                 }
                 // //update title and text and image
-                newcard.querySelector('#journal-content').innerHTML = content;
+                newcard.querySelector('#journal-content').innerHTML = `<span style="opacity: 100%; font-weight:400">${content}</span>`
                 newcard.querySelector('#journal-picture').src = picture;
                 // newcard.querySelector('.postcontent').innerHTML = postcontent;
                 newcard.querySelector('#journal-timestamp').innerHTML = emoji + " " + d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate() + " " +
                     d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
                 newcard.querySelector('#journal-tag').innerHTML = tag;
                 newcard.querySelector('#journal-tag').classList.add("tag-" + tag);
-                newcard.querySelector('#journalCard').classList.add("journal-" + tag + "-mood");
+                newcard.querySelector('#journal-timestamp').classList.add("journal-" + tag + "-mood");
                 newcard.querySelector('#journal-tip').classList.add("tag-" + tag);
                 document.getElementById("previous-journal-go-here").appendChild(newcard);
                 console.log("HI")

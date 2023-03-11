@@ -1,0 +1,42 @@
+.navbar {
+    background-color: #88D4CC;
+}
+
+.navbar-brand {
+    color: #FFFFFF;
+}
+
+.navbar-brand a:hover {
+    color: #712F3E;
+}
+
+.offcanvas-header {
+    background-color: #648987;
+}
+
+.offcanvas-body {
+    background-color: #e1dbd1;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+
+body {
+    background-color: #88D4CC;
+    height: 100vh;
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    /* background-image: linear-gradient(0deg, #00000088 30%, #ffffff44 100%), url('https://picsum.photos/800'); */
+    /* background-image: linear-gradient(0deg, #00000088 30%, #ffffff44 100%), url('https://images.unsplash.com/photo-1678538065976-7b9bfe8a3092?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60'); */
+    background-image: linear-gradient(0deg, #00000088 30%, #ffffff44 100%), url('https://plus.unsplash.com/premium_photo-1670444760189-8a1f5153770d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxOXx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60');
+    color: #FFFFFF;
+    background-size: cover;
+    background-position: center;
+}
+
+button:hover {
+    background-color: #648987;
+}
