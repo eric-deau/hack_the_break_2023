@@ -42,3 +42,27 @@
 .tag-Happy {
     background-color: green !important;
 }
+
+.submit_btn {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    display: fixed;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    letter-spacing: 2px;
+    min-width: 100px;
+    text-transform: uppercase;
+    white-space: normal;
+    font-weight: 700;
+    text-align: center;
+    padding: 5px;
+    color: #fff;
+    background-color: #2999FF;
+    transition-property: background-color, border-color, color, box-shadow, filter;
+    transition-duration: .3s;
+}

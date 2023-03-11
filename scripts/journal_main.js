@@ -37,14 +37,27 @@ function displayJournalDynamically(collection) {
                 newcard.querySelector('#journal-timestamp').innerHTML = emoji + " " + d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate() + " " +
                     d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
                 newcard.querySelector('#journal-tag').innerHTML = tag;
-                newcard.querySelector('#journal-tag').classList.add("tag-"+tag);
-                newcard.querySelector('#journalCard').classList.add("journal-"+tag+"-mood");
+                newcard.querySelector('#journal-tag').classList.add("tag-" + tag);
+                newcard.querySelector('#journalCard').classList.add("journal-" + tag + "-mood");
                 newcard.querySelector('#journal-tip').classList.add("tag-" + tag);
                 document.getElementById("previous-journal-go-here").appendChild(newcard);
                 console.log("HI")
             });
         }
         )
+}
+
+function add_journal() {
+    firebase.auth().onAuthStateChanged(function (user) {
+        uID = firebase.auth().currentUser.uid
+        db.collection("journal").add({
+            content: $(".journal-input").val(),
+            timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+            uid: uID
+        }).then(function () {
+            console.log("Journal added")
+        })
+    })
 }
 
 displayJournalDynamically("journals")
