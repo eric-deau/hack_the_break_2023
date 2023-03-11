@@ -1,0 +1,68 @@
+#journalCard {
+    border-radius: 10px;
+    padding-bottom: 5px;
+    border: 0px;
+}
+
+.journal-Happy-mood {
+    background-color: lightgreen !important;
+}
+
+.journal-Angry-mood {
+    background-color: lightpink !important;
+}
+
+.journal-Sad-mood {
+    background-color: #638d96 !important;
+    color: white;
+}
+
+.journal-default-mood {
+    background-color: lightblue;
+}
+
+#journal-timestamp {
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
+}
+
+#journal-footer {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.tag-Angry {
+    background-color: red !important;
+}
+
+.tag-Sad {
+    background-color: chocolate !important;
+}
+
+.tag-Happy {
+    background-color: green !important;
+}
+
+.submit_btn {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    display: fixed;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    letter-spacing: 2px;
+    min-width: 100px;
+    text-transform: uppercase;
+    white-space: normal;
+    font-weight: 700;
+    text-align: center;
+    padding: 5px;
+    color: #fff;
+    background-color: #2999FF;
+    transition-property: background-color, border-color, color, box-shadow, filter;
+    transition-duration: .3s;
+}
