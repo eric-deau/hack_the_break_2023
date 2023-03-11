@@ -58,7 +58,7 @@
             /* margin: left 5; */
             margin-right: 5px;
             flex-shrink: 0;
-            scroll-snap-align: start;
+            scroll-snap-align: center;
         }
 
         .dots {
@@ -177,7 +177,7 @@
         <div class="box"></div>
         <div class="box"></div>
     </div>
-    <div class="dots">
+    <div class="dots" id="dots_1">
         <button class="dot" href="https://www.google.com/"></button>
         <!-- <a href="https://www.google.com/" class="" role="button"></a> -->
         <button class="dot"></button>
@@ -242,7 +242,7 @@
         <div class="box"></div>
         <div class="box"></div>
     </div>
-    <div class="dots">
+    <div class="dots" id="dots_2>
         <button class="dot"></button>
         <button class="dot"></button>
         <button class="dot"></button>
@@ -306,7 +306,7 @@
         <div class="box"></div>
         <div class="box"></div>
     </div>
-    <div class="dots">
+    <div class="dots" id="dots_3>
         <button class="dot"></button>
         <button class="dot"></button>
         <button class="dot"></button>
@@ -354,12 +354,14 @@
         dots.addEventListener('click', e => {
             const target = e.target;
             if (!target.matches('.dot')) {
+                console.log('not a dot');
                 return;
             }
 
             const index = Array.from(dots.children).indexOf(target);
             const selector = `.box:nth-child(${index + 1})`;
             const box = document.querySelector(selector)
+            
             box.scrollIntoView({
                 behavior: 'smooth',
                 inline: 'start'
@@ -367,6 +369,7 @@
         })
     </script>
     <script src="./scripts/skeleton.js"></script>
+    <script src="./scripts/tips_main.js"></script>
     <script src="./scripts/firebaseAPI.js"></script>
 
 
