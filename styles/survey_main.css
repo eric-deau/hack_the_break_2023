@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    margin: 35px 0px!important;    
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    margin-top: 56px;
+}
+
+/* .radio-responses {
+    display: flex;
+} */
+
+.radio-responses label{
+    display:inline-block;
+    text-align:center;
+    margin:0 0.2em;
+}
+.radio-responses label input[type="radio"] {
+    display:block;
+    margin:0.5em auto;
+}
+
+.form-check-inline {
+    font-size: 11px;
+}
+
+#start {
+    padding-left: 0px!important;
+}
+
+#end {
+    padding-right: 0px!important;
+}
+
+.question {
+    margin-bottom: 1em;
+    margin-right: auto;
+    margin-left: auto;
+    width: 80%;
+}
