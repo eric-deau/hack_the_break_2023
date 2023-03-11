@@ -5,7 +5,6 @@ function displayJournalDynamically(collection) {
         .get()
         .then((allPost) => {
             allPost.forEach((doc) => {
-                console.log(doc.data())
                 var content = doc.data().content
                 var picture = doc.data().picture
                 var tag = doc.data().tag
@@ -41,7 +40,6 @@ function displayJournalDynamically(collection) {
                 newcard.querySelector('#journal-timestamp').classList.add("journal-" + tag + "-mood");
                 newcard.querySelector('#journal-tip').classList.add("tag-" + tag);
                 document.getElementById("previous-journal-go-here").appendChild(newcard);
-                console.log("HI")
             });
         }
         )
@@ -58,6 +56,35 @@ function add_journal() {
             console.log("Journal added")
         })
     })
+}
+
+function uploadPic(postDocID) {
+    console.log("inside uploadPic " + postDocID);
+    var storageRef = storage.ref("images/" + postDocID + ".jpg");
+
+    storageRef.put(ImageFile)   //global variable ImageFile
+
+        // AFTER .put() is done
+        .then(function () {
+            console.log('Uploaded to Cloud Storage.');
+            storageRef.getDownloadURL()
+
+                // AFTER .getDownloadURL is done
+                .then(function (url) { // Get URL of the uploaded file
+                    console.log("Got the download URL.");
+                    db.collection("posts").doc(postDocID).update({
+                        "picture": url // Save the URL into users collection
+                    })
+
+                        // AFTER .update is done
+                        .then(function () {
+                            console.log('Added pic URL to Firestore.');
+                        })
+                })
+        })
+        .catch((error) => {
+            console.log("error uploading to cloud storage");
+        })
 }
 
 displayJournalDynamically("journals")
