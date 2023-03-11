@@ -11,7 +11,7 @@ body {
     flex-direction: column;
     /* background-image: linear-gradient(0deg, #00000088 30%, #ffffff44 100%), url('https://picsum.photos/800'); */
     /* background-image: linear-gradient(0deg, #00000088 30%, #ffffff44 100%), url('https://images.unsplash.com/photo-1678538065976-7b9bfe8a3092?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60'); */
-    background-image: linear-gradient(0deg, #00000088 30%, #ffffff44 100%), url('https://images.unsplash.com/photo-1678537378341-f9a017d75515?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60');
+    background-image: linear-gradient(0deg, #00000088 30%, #ffffff44 100%), url('https://plus.unsplash.com/premium_photo-1670444760189-8a1f5153770d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxOXx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60');
     color: #FFFFFF;
     background-size: cover;
     background-position: center;
@@ -25,10 +25,10 @@ body {
 .btn-primary {
     --bs-btn-font-weight: 600;
     --bs-btn-color: #712F3E;
-    --bs-btn-bg: #E1DBD1;
+    --bs-btn-bg: #E1DBD199;
     --bs-btn-border-color: #712F3E;
-    --bs-btn-border-radius: .5rem;
-    --bs-btn-hover-color: #e1bdd1;
+    --bs-btn-border-radius: var(--bs-border-radius);
+    --bs-btn-hover-color: #e1dbd1;
     --bs-btn-hover-bg: #712f3e;
     --bs-btn-hover-border-color: #712f3e;
     --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
