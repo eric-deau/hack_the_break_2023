@@ -1,0 +1,9 @@
+body {
+    background-color: #f1beb0;
+    /* background: linear-gradient(0deg, #00000088 30%, #ffffff44 100%); */
+    /* background-image: url('images/samuel-regan-asante-40us-d8dsZs-unsplash.jpg'); */
+}
+div {
+    width: 100%;
+    align-content: center;
+}
