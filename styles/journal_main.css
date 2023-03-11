@@ -1,0 +1,44 @@
+#previous-journal-go-here {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+#journalCard {
+    border-radius: 10px;
+    padding-bottom: 5px;
+    border: 0px;
+}
+
+.journal-happy-mood {
+    background-color: lightgreen!important;
+}
+
+.journal-mad-mood {
+    background-color: lightpink!important;
+}
+
+.journal-sad-mood {
+    background-color: lemonchiffon !important;
+}
+
+.journal-default-mood {
+    background-color: lightblue;
+}
+
+#journal-timestamp {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+#journal-footer {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.tag-Sad {
+    background-color: chocolate!important;
+}
+
+.tag-Happy {
+    background-color: green!important;
+}

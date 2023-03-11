@@ -7,16 +7,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-        </script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
 
     <!-------------------------------------------------------->
     <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
     <!-------------------------------------------------------->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
@@ -27,20 +27,48 @@
 
     <!-- Link to styles of your own -->
     <!-- <link rel="stylesheet" href="./styles/style.css"> -->
+    <link rel="stylesheet" href="./styles/journal_main.css">
 
 
 </head>
 
 <body>
-    <!------------------------------>
-    <!-- Your HTML Layout go here -->
-    <!------------------------------>
     <!-- Navbar -->
     <nav id="navbarPlaceholder"></nav>
-
-
-
-
+    <h1 class="ms-3">My Journal Page</h1> <br>
+    <!-- previousJournal -->
+    <div id="previous-journal-go-here"> </div>
+    <h6 class="ms-3">Life can get busy and overwhelming at times. Just remember that whenever you're ready to return to
+        your journal, it's
+        always there as a safe space for you to express yourself.</h6>
+    <!-- Input Field -->
+    <textarea class="form-control mt-2 mb-3 ms-5 me-5" rows="7" id="journal-input"></textarea>
+    <!-- template   -->
+    <template id="PreviousJournalPlaceHolder">
+        <div class="card shadow-sm journal-sad-mood" id="journalCard">
+            <div class="card-header" id="journal-timestamp">
+                😆 2023-03-11 11:50:00 AM
+            </div>
+            <div class="card-body">
+                <img src="" class="img-fluid"  id="journal-picture">
+            </div>
+            <div class="card-body" id="journal-content">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium, doloribus neque animi voluptate
+                maiores totam ex facere! Sapiente, itaque voluptatum, a nobis velit similique nemo, dignissimos quaerat
+                eaque non ea!
+            </div>
+            <div class="d-flex card-footer justify-content-between" id="journal-footer">
+                <div>
+                    Tag: <span class="badge badge-pill" id="journal-tag"></span>
+                </div>
+                <div class="tip">
+                    Tips: <span class="badge badge-pill" id="journal-tip">Want to Be Happier? Science Says Do These 11 Things
+                        Every Day</span>
+                </div>
+            </div>
+        </div>
+    </template>
+    <!-- footerbar-->
     <footer id="footerBeforeLoginPlaceholder"></footer>
 
 
