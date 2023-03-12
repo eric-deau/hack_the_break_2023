@@ -23,8 +23,8 @@
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
-
-
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
     <!-- Link to styles of your own -->
     <!-- <link rel="stylesheet" href="./styles/style.css"> -->
@@ -58,16 +58,26 @@
                 </select>
             </div>
             <textarea class="form-control mt-2 mb-3" rows="7" id="journal-input"></textarea>
+            <div class="mb-3" style="display: flex;justify-content: space-between;">
+                <span>Choose your occupation before your journal: </span>
+                <select class="js-example-basic-single" name="state" style="width:30%">
+                    <option value="" selected disabled hidden>Choose here</option>
+                    <option>BCIT instructor</option>
+                </select>
+            </div>
             <div style="display: flex;justify-content: space-between;">
                 <input class="image_btn" type="file" accept="image/*" id="uploadimage">
                 <p class="submit_btn" onclick="add_journal()">Submit</p>
             </div>
-            <div style="color:white;border:1px white solid; border-radius: 1%; padding: 5px;">We want to assure you that your journal is completely anonymous and not tied to your personal data,
-                even on our
-                database. The only information attached to your journal will be your occupation.
-                If you choose to submit, your journal data may be used for research purposes. However, your personal
-                information will
-                never be shared. Your privacy is our top priority.</div>
+            <div style="color:white;border:1px white solid; border-radius: 1%; padding: 5px;">
+                <small>We want to assure you that your journal is completely anonymous and not tied to your personal
+                    data,
+                    even on our
+                    database. The only information attached to your journal will be your occupation.
+                    If you choose to submit, your journal data may be used for research purposes. However, your personal
+                    information will
+                    never be shared. <b>Your privacy is our top priority.</b></small>
+            </div>
             <div class="mt-3 mb-4">
                 <h5 class=" text-uppercase">Journals shared by colleagues and peers(<span id="occupation"></span>)</h5>
                 <!-- Gradient divider -->
