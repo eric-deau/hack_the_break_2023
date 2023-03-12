@@ -12,9 +12,9 @@ function saveSurveyResults() {
   var Q3 = $("#Q3").val();
   console.log("Q3: " + Q3);
   localStorage.setItem("Q3", Q3);
-
+  
   var Q4;
-
+  
   if ($("#inlineRadio1").is(":checked")) {
     Q4 = $("#inlineRadio1").val();
   } else if ($("#inlineRadio2").is(":checked")) {
@@ -32,9 +32,14 @@ function saveSurveyResults() {
     reason: Q3,
     stress_level: Q4,
     timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+  }).then(function () {
+    window.location.href = "./tips_main.html";
   })
-
+  
+  
+  
   localStorage.setItem("Q4", Q4);
+  
 }
 
 var subjectObject = {
