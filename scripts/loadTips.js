@@ -1,4 +1,15 @@
 function loadTips() {
-  console.log($("#Option1Carousel").load("./text/option_1.html"));
+  $.get("./text/option_1.html", function (data) {
+    console.log($("#carouseldynamic").append(data));
+  });
+
+  $.get("./text/option_1.html", function (data) {
+    console.log($("#carouseldynamic").append(data));
+  });
+
+  $.get("./text/option_1.html", function (data) {
+    console.log($("#carouseldynamic").append(data));
+  });
 }
+
 loadTips();
