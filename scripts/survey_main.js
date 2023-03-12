@@ -32,8 +32,8 @@ function saveSurveyResults() {
 
 var subjectObject = {
   "Not Stressed": {
-    "Not Stressed": ["1 or more days", "1 or more months", "1 or more years"],
-    "Interviews": ["1 or more days", "1 or more months", "1 or more years"],
+    "Enjoyment of Occupation": ["1 or more days", "1 or more months", "1 or more years"],
+    "Financials": ["1 or more days", "1 or more months", "1 or more years"],
     "Current Workload": ["1 or more days", "1 or more months", "1 or more years"]
   },
 
