@@ -86,3 +86,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
 }
+
+.hidden-block {
+    visibility:hidden!important;
+}
