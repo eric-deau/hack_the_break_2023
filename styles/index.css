@@ -22,17 +22,58 @@ body {
     display: block;
 }
 
+.btn {
+    background-color: #FFFFFF95;
+    min-width: 80%;
+    border: 0px;
+    color: #000000;
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.btn:hover {
+    background-color: #FFFFFF;
+    color: #000000;
+    border: 0px;
+}
+
+.btn:focus {
+    background-color: #FFFFFF!important;
+    color: #000000!important;
+    border: 0px;
+}
+
+.btn:focus-visible {
+    background-color: #FFFFFF!important;
+    color: #000000!important;
+    box-shadow: none!important;
+}
+
+.btn:active {
+    background-color: #FFFFFF!important;
+    color: #000000!important;
+}
+
+.btn-check:focus+.btn-outline-danger, .btn-outline-danger:focus {
+    box-shadow: none!important;
+}
+
+h1 {
+    color: #000000!important;
+}
+
+/* 
 .btn-primary {
     --bs-btn-font-weight: 600;
-    --bs-btn-color: #712F3E;
-    --bs-btn-bg: #E1DBD199;
-    --bs-btn-border-color: #712F3E;
+    --bs-btn-color: #000000;
+    --bs-btn-bg: #ffffff95;
+    --bs-btn-border-color: #000000;
     --bs-btn-border-radius: var(--bs-border-radius);
     --bs-btn-hover-color: #e1dbd1;
-    --bs-btn-hover-bg: #712f3e;
-    --bs-btn-hover-border-color: #712f3e;
+    --bs-btn-hover-bg: #ffffff;
+    --bs-btn-hover-border-color: #000000;
     --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
     --bs-btn-active-color: var(--bs-btn-hover-color);
     --bs-btn-active-bg: #{shade-color($bd-violet, 20%)};
     --bs-btn-active-border-color: #{shade-color($bd-violet, 20%)};
-}
+} */
