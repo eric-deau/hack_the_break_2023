@@ -29,3 +29,49 @@ function saveSurveyResults() {
 
   localStorage.setItem("Q4", Q4);
 }
+
+var subjectObject = {
+  "Not Stressed": {
+    "Not Stressed": ["1 or more days", "1 or more months", "1 or more years"],
+    "Interviews": ["1 or more days", "1 or more months", "1 or more years"],
+    "Current Workload": ["1 or more days", "1 or more months", "1 or more years"]
+  },
+
+  "Jobless": {
+    "Financial": ["1 or more days", "1 or more months", "1 or more years"],
+    "Interviews": ["1 or more days", "1 or more months", "1 or more years"],
+    "Current Workload": ["1 or more days", "1 or more months", "1 or more years"]
+  },
+
+  "Current Job": {
+    "Financial": ["1 or more days", "1 or more months", "1 or more years"],
+    "Deadlines": ["1 or more days", "1 or more months", "1 or more years"],
+    "Interpersonal": ["1 or more days", "1 or more months", "1 or more years"]
+  },
+}
+window.onload = function () {
+  var subjectSel = document.getElementById("Q1");
+  var topicSel = document.getElementById("Q2");
+  var chapterSel = document.getElementById("Q3");
+  for (var x in subjectObject) {
+    subjectSel.options[subjectSel.options.length] = new Option(x, x);
+  }
+  subjectSel.onchange = function () {
+    //empty Chapters- and Topics- dropdowns
+    chapterSel.length = 1;
+    topicSel.length = 1;
+    //display correct values
+    for (var y in subjectObject[this.value]) {
+      topicSel.options[topicSel.options.length] = new Option(y, y);
+    }
+  }
+  topicSel.onchange = function () {
+    //empty Chapters dropdown
+    chapterSel.length = 1;
+    //display correct values
+    var z = subjectObject[subjectSel.value][this.value];
+    for (var i = 0; i < z.length; i++) {
+      chapterSel.options[chapterSel.options.length] = new Option(z[i], z[i]);
+    }
+  }
+}
