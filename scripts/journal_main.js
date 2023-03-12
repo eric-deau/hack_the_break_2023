@@ -128,12 +128,12 @@ function add_journal() {
                         }).then(function (journal) {
                             uploadPic(journal.id)
                             console.log("Journal added")
-                            $("#warning").html(`<p style="color:lightgreen; font-weight: 600;">Thank you for sharing your thoughts and feelings with us. 
-                             Your words remind us that work can be both challenging and rewarding. </p> <a href="journal_main.html" class="refresh">Refresh to see your post</a>`)
-
                         })
                     }))
                 })
+                $("#warning").html(`<p style="color:lightgreen; font-weight: 600;">Thank you for sharing your thoughts and feelings with us. 
+                             Your words remind us that work can be both challenging and rewarding. </p> <a href="journal_main.html" class="refresh">Refresh to see your post</a>`)
+
             }
             else {
                 if ($("#mood-tag").val() == null) {
