@@ -26,7 +26,7 @@ var uiConfig = {
     },
 
     signInFlow: 'popup',
-    signInSuccessUrl: './main.html',
+    signInSuccessUrl: './tips_main.html',
     signInOptions: [
         firebase.auth.EmailAuthProvider.PROVIDER_ID,
     ],

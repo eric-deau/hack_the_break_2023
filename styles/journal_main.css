@@ -17,6 +17,16 @@
     color: white;
 }
 
+.journal-Fear-mood {
+    background-color: lightyellow !important;
+    color: white;
+}
+
+.journal-Disguest-mood {
+    background-color: lightsteelblue !important;
+    color: white;
+}
+
 .journal-default-mood {
     background-color: lightblue;
 }
@@ -35,8 +45,16 @@
     background-color: red !important;
 }
 
+.tag-Fear {
+    background-color: orange !important;
+}
+
 .tag-Sad {
     background-color: chocolate !important;
+}
+
+.tag-Disguest {
+    background-color: slategrey !important;
 }
 
 .tag-Happy {
@@ -80,13 +98,36 @@
     text-align: center;
 }
 
-body {
-    background-image: linear-gradient(0deg, #00000088 30%, #ffffff44 100%), url('https://plus.unsplash.com/premium_photo-1670444760189-8a1f5153770d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxOXx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
 
 .hidden-block {
-    visibility:hidden!important;
+    visibility: hidden !important;
+}
+
+.refresh {
+    display: block;
+    cursor: pointer;
+    display: fixed;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    letter-spacing: 2px;
+    min-width: 100px;
+    text-transform: uppercase;
+    white-space: normal;
+    font-weight: 700;
+    text-align: center;
+    padding: 5px;
+    color: black;
+    text-decoration: none;
+    background-color: lightgreen;
+}
+
+.container-journal {
+    color: black!important
+}
+
+@media screen and (min-width: 1000px) {
+    .container-journal {
+        color: white!important;
+    }
 }

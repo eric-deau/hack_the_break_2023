@@ -11,7 +11,7 @@ body {
     flex-direction: column;
     /* background-image: linear-gradient(0deg, #00000088 30%, #ffffff44 100%), url('https://picsum.photos/800'); */
     /* background-image: linear-gradient(0deg, #00000088 30%, #ffffff44 100%), url('https://images.unsplash.com/photo-1678538065976-7b9bfe8a3092?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60'); */
-    background-image: linear-gradient(0deg, #00000088 30%, #ffffff44 100%), url('https://plus.unsplash.com/premium_photo-1670444760189-8a1f5153770d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxOXx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60');
+    background-image: linear-gradient(0deg, #00000088 30%, #ffffff44 100%), url('https: //images.unsplash.com/photo-1678420669625-e6221ab74a40?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMDR8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60');
     color: #FFFFFF;
     background-size: cover;
     background-position: center;
@@ -22,17 +22,58 @@ body {
     display: block;
 }
 
+.btn {
+    background-color: #FFFFFF95;
+    min-width: 80%;
+    border: 0px;
+    color: #000000;
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.btn:hover {
+    background-color: #FFFFFF;
+    color: #000000;
+    border: 0px;
+}
+
+.btn:focus {
+    background-color: #FFFFFF!important;
+    color: #000000!important;
+    border: 0px;
+}
+
+.btn:focus-visible {
+    background-color: #FFFFFF!important;
+    color: #000000!important;
+    box-shadow: none!important;
+}
+
+.btn:active {
+    background-color: #FFFFFF!important;
+    color: #000000!important;
+}
+
+.btn-check:focus+.btn-outline-danger, .btn-outline-danger:focus {
+    box-shadow: none!important;
+}
+
+h1 {
+    color: #000000!important;
+}
+
+/* 
 .btn-primary {
     --bs-btn-font-weight: 600;
-    --bs-btn-color: #712F3E;
-    --bs-btn-bg: #E1DBD199;
-    --bs-btn-border-color: #712F3E;
+    --bs-btn-color: #000000;
+    --bs-btn-bg: #ffffff95;
+    --bs-btn-border-color: #000000;
     --bs-btn-border-radius: var(--bs-border-radius);
     --bs-btn-hover-color: #e1dbd1;
-    --bs-btn-hover-bg: #712f3e;
-    --bs-btn-hover-border-color: #712f3e;
+    --bs-btn-hover-bg: #ffffff;
+    --bs-btn-hover-border-color: #000000;
     --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
     --bs-btn-active-color: var(--bs-btn-hover-color);
     --bs-btn-active-bg: #{shade-color($bd-violet, 20%)};
     --bs-btn-active-border-color: #{shade-color($bd-violet, 20%)};
-}
+} */
