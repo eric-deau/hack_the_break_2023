@@ -51,7 +51,7 @@ function listenFileSelect() {
     // listen for file selection
     var fileInput = document.getElementById("uploadimage"); // pointer #1
     const image = document.getElementById("mypic-goes-here"); // pointer #2
-    
+
     // When a change happens to the File Chooser Input
     fileInput.addEventListener('change', function (e) {
         ImageFile = e.target.files[0];   //Global variable
@@ -65,7 +65,7 @@ listenFileSelect();
 function uploadPic(JournalID) {
     var storageRef = storage.ref("images/" + JournalID + ".jpg");
     storageRef.put(ImageFile)
-    .then(function () {
+        .then(function () {
             console.log('Uploaded to Cloud Storage.');
             storageRef.getDownloadURL()
                 .then(function (url) {
@@ -73,10 +73,10 @@ function uploadPic(JournalID) {
                     db.collection("journals").doc(JournalID).update({
                         "picture": url
                     })
-                    .then(function () {
+                        .then(function () {
                             console.log('Added pic URL to Firestore.');
                         })
-                    })
+                })
         })
         .catch((error) => {
             console.log("error uploading to cloud storage");
@@ -97,5 +97,16 @@ function add_journal() {
         })
     })
 }
+$(document).ready(function () {
+    $('.js-example-basic-single').select2();
+    $.get('text/list_of_job_title.csv', function (data) {
+        var textByLine = data.split("\n")
+        for (var i = 0; i < textByLine.length; i++) {
+            $('.js-example-basic-single').append(`<option>${textByLine[i]}</option>`)
+        }
+    }, 'text');
+    
+});
+
 
 displayJournalDynamically("journals")
