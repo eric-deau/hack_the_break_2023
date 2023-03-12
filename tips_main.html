@@ -76,8 +76,8 @@
             margin-top: 10px;
         }
 
-        .dot:focus {
-            outline: 1px solid blue;
+        .dot.current-box {
+            outline: 15px solid blue;
         }
 
         .row {
@@ -169,17 +169,13 @@
                 phones, tablets or computers — in the hours before bedtime. Consider reading or listening to
                 relaxing music instead. </p>
         </div>
-        <div class="box">text2</div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
+        <div class="box">8</div>
     </div>
-    <!-- <div class="dots" id="dots_1">
+    <div class="dots" id="dots_1">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
         <button class="dot"></button>
         <button class="dot"></button>
         <button class="dot"></button>
@@ -188,7 +184,8 @@
         <button class="dot"></button>
         <button class="dot"></button>
         <button class="dot"></button>
-        <button class="dot"></button> -->
+        <button class="dot"></button>
+        
         <!-- <script>
             const dots = document.querySelector('.dots');
             dots.addEventListener('click', e => {
@@ -273,7 +270,7 @@
         <button class="dot"></button>
         <button class="dot"></button>
         <button class="dot"></button> -->
-        <!-- <script>
+    <!-- <script>
             const dots2 = document.querySelector('#dots_2');
             dots2.addEventListener('click', e => {
                 const target = e.target;
