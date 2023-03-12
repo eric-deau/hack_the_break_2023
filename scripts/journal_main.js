@@ -45,38 +45,34 @@ function displayJournalDynamically(collection) {
         )
 }
 
-function add_journal() {
-    firebase.auth().onAuthStateChanged(function (user) {
-        uID = firebase.auth().currentUser.uid
-        db.collection("journal").add({
-            content: $(".journal-input").val(),
-            timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-            uid: uID
-        }).then(function () {
-            console.log("Journal added")
-        })
+
+var ImageFile;
+function listenFileSelect() {
+    // listen for file selection
+    var fileInput = document.getElementById("uploadimage"); // pointer #1
+    const image = document.getElementById("mypic-goes-here"); // pointer #2
+
+    // When a change happens to the File Chooser Input
+    fileInput.addEventListener('change', function (e) {
+        ImageFile = e.target.files[0];   //Global variable
+        var blob = URL.createObjectURL(ImageFile);
+        // image.src = blob; // Display this image
     })
 }
 
-function uploadPic(postDocID) {
-    console.log("inside uploadPic " + postDocID);
-    var storageRef = storage.ref("images/" + postDocID + ".jpg");
+listenFileSelect();
 
-    storageRef.put(ImageFile)   //global variable ImageFile
-
-        // AFTER .put() is done
+function uploadPic(JournalID) {
+    var storageRef = storage.ref("images/" + JournalID + ".jpg");
+    storageRef.put(ImageFile)
         .then(function () {
             console.log('Uploaded to Cloud Storage.');
             storageRef.getDownloadURL()
-
-                // AFTER .getDownloadURL is done
-                .then(function (url) { // Get URL of the uploaded file
+                .then(function (url) {
                     console.log("Got the download URL.");
-                    db.collection("posts").doc(postDocID).update({
-                        "picture": url // Save the URL into users collection
+                    db.collection("journals").doc(JournalID).update({
+                        "picture": url
                     })
-
-                        // AFTER .update is done
                         .then(function () {
                             console.log('Added pic URL to Firestore.');
                         })
@@ -86,5 +82,31 @@ function uploadPic(postDocID) {
             console.log("error uploading to cloud storage");
         })
 }
+
+function add_journal() {
+    firebase.auth().onAuthStateChanged(function () {
+        uID = firebase.auth().currentUser.uid
+        console.log(uID)
+        db.collection("journals").add({
+            content: $("#journal-input").val(),
+            picture: "",
+            timestamp: firebase.firestore.FieldValue.serverTimestamp()
+        }).then(function (journal) {
+            uploadPic(journal.id)
+            console.log("Journal added")
+        })
+    })
+}
+$(document).ready(function () {
+    $('.js-example-basic-single').select2();
+    $.get('text/list_of_job_title.csv', function (data) {
+        var textByLine = data.split("\n")
+        for (var i = 0; i < textByLine.length; i++) {
+            $('.js-example-basic-single').append(`<option>${textByLine[i]}</option>`)
+        }
+    }, 'text');
+    
+});
+
 
 displayJournalDynamically("journals")
