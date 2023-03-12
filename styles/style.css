@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800;900&display=swap');
+
 .navbar {
     background-color: #88D4CC;
 }
@@ -30,6 +32,8 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    font-family: 'Golos Text', sans-serif;
+    
 }
 
 button:hover {

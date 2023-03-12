@@ -4,6 +4,9 @@ function displayJournalDynamically(collection) {
         db.collection("users").doc(UserID).get().then(function (querySnapshot) {
             occupation_stored = querySnapshot.data().occupation
             let cardTemplate = document.getElementById("PreviousJournalPlaceHolder");
+            if (occupation_stored == undefined) {
+                occupation_stored = ""
+            }
             db.collection(collection).limit(5).where("occupation", "==", occupation_stored)// UserID) //.orderBy("timestamp", "desc")
                 .get()
                 .then((allPost) => {
@@ -96,38 +99,54 @@ function uploadPic(JournalID) {
 }
 
 function add_journal() {
-    if ($("#mood-tag").val() != null) {
-        firebase.auth().onAuthStateChanged(function () {
-            uID = firebase.auth().currentUser.uid
-            db.collection("users").doc(uID).get().then(function (querySnapshot) {
-                occupation_stored = querySnapshot.data().occupation
-                if ($('.occupation-choice').val() != null) {
-                    occupation_stored = $('.occupation-choice').val()
-                    db.collection("users").doc(uID).update({
-                        "occupation": $('.occupation-choice').val()
-                    })
-                        .then(function () {
-                            console.log('Added occupation to Firestore.');
+    firebase.auth().onAuthStateChanged(function () {
+        uID = firebase.auth().currentUser.uid
+        db.collection("users").doc(uID).get().then(function (querySnapshot) {
+            occupation_stored = querySnapshot.data().occupation
+            if ($("#mood-tag").val() != null && ($('.occupation-choice').val() != null | occupation_stored != undefined) && $("#journal-input").val().length > 0) {
+                firebase.auth().onAuthStateChanged(function () {
+                    uID = firebase.auth().currentUser.uid
+                    db.collection("users").doc(uID).get().then(function (querySnapshot) {
+                        occupation_stored = querySnapshot.data().occupation
+                        if ($('.occupation-choice').val() != null) {
+                            occupation_stored = $('.occupation-choice').val()
+                            db.collection("users").doc(uID).update({
+                                "occupation": $('.occupation-choice').val()
+                            })
+                                .then(function () {
+                                    console.log('Added occupation to Firestore.');
+                                })
+                        }
+                    }).then(db.collection("users").doc(firebase.auth().currentUser.uid).get().then(function (querySnapshot) {
+                        occupation_stored = querySnapshot.data().occupation
+                        db.collection("journals").add({
+                            content: $("#journal-input").val(),
+                            picture: "",
+                            tag: $("#mood-tag").val(),
+                            occupation: occupation_stored,
+                            timestamp: firebase.firestore.FieldValue.serverTimestamp()
+                        }).then(function (journal) {
+                            uploadPic(journal.id)
+                            console.log("Journal added")
+                            $("#warning").html(`<p style="color:lightgreen; font-weight: 600;">Thank you for sharing your thoughts and feelings with us. 
+                             Your words remind us that work can be both challenging and rewarding. </p>`)
                         })
-                }
-            }).then(db.collection("users").doc(firebase.auth().currentUser.uid).get().then(function (querySnapshot) {
-                occupation_stored = querySnapshot.data().occupation
-                db.collection("journals").add({
-                    content: $("#journal-input").val(),
-                    picture: "",
-                    tag: $("#mood-tag").val(),
-                    occupation: occupation_stored,
-                    timestamp: firebase.firestore.FieldValue.serverTimestamp()
-                }).then(function (journal) {
-                    uploadPic(journal.id)
-                    console.log("Journal added")
+                    }))
                 })
-            }))
+            }
+            else {
+                if ($("#mood-tag").val() == null) {
+                    $("#warning").html(`<p style="color:lightpink font-weight: 600;">Please select a mood before submission 😬 </p>`)
+                }
+                if ($('.occupation-choice').val() == null && occupation_stored == undefined) {
+                    $("#warning").html(`<p style="color:lightpink font-weight: 600;">Please select an occupation before submission 😬 </p>`)
+                }
+                if ($("#journal-input").val().length == 0) {
+                    $("#warning").html(`<p style="color:lightpink font-weight: 600;">Please do not submit empty journal~ 😬 </p>`)
+                }
+            }
         })
-    }
-    else {
-        alert("Please select a mood tag")
-    }
+    })
 }
 $(document).ready(function () {
     $('.occupation-choice').select2();

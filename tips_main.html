@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <title>Hack-the-break-mental-health</title>
-    <meta name="comp1800 template" content="My 1800 App">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="comp1800 template" content="My 1800 App" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-        crossorigin="anonymous"></script>
-
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
 
     <!-------------------------------------------------------->
     <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
@@ -22,288 +26,349 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
-
-
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css"
+    />
 
     <!-- Link to styles of your own -->
-    <link rel="stylesheet" href="./styles/tips_main.css">
+    <link rel="stylesheet" href="./styles/tips_main.css" />
     <style>
-        * {
-            font-style: sans-serif, arial;
-            box-sizing: border-box;
-        }
+      * {
+        font-style: sans-serif, arial;
+        box-sizing: border-box;
+      }
 
-        .carousel {
-            overflow: auto;
-            display: flex;
-            scroll-snap-type: x mandatory;
-            height: 400px;
-            width: 95%;
-            margin: auto;
-            padding: .5%;
-        }
+      .carousel {
+        overflow: auto;
+        display: flex;
+        scroll-snap-type: x mandatory;
+        height: 400px;
+        padding: 0.5%;
+      }
 
-        .carousel::-webkit-scrollbar {
-            background-color: #d6dee1;
-            border-radius: 20px;
-            border: 6px solid transparent;
-            background-clip: content-box;
-        }
+      .carousel::-webkit-scrollbar {
+        background-color: #d6dee1;
+        border-radius: 20px;
+        border: 6px solid transparent;
+        background-clip: content-box;
+      }
 
-        .carousel::-webkit-scrollbar-thumb {
-            background-color: #2b2b2b;
-            border-radius: 20px;
-            border: 6px solid transparent;
-            background-clip: content-box;
-        }
+      .carousel::-webkit-scrollbar-thumb {
+        background-color: #2b2b2b;
+        border-radius: 20px;
+        border: 6px solid transparent;
+        background-clip: content-box;
+      }
 
-        /* Hide scrollbar for IE, Edge and Firefox */
-        .carousel {
-            /* -ms-overflow-style: none; */
-            /* IE and Edge */
-            /* scrollbar-width: none; */
-            /* Firefox */
-            /* /* background-color: #d6dee1; */
-            /* border-radius: 20px;
+      .carousel-container {
+        padding-top: 3em !important;
+        width: 95%;
+        margin: auto;
+      }
+
+      /* Hide scrollbar for IE, Edge and Firefox */
+      .carousel {
+        /* -ms-overflow-style: none; */
+        /* IE and Edge */
+        /* scrollbar-width: none; */
+        /* Firefox */
+        /* /* background-color: #d6dee1; */
+        /* border-radius: 20px;
             border: 6px solid transparent;
             background-clip: content-box; 
             color: #712F3E; */
-        }
+        min-width: 0;
+      }
 
-        .box {
-            border-radius: 8px;
-            height: 90%;
-            width: 75%;
-            color: #e1dbd1;
-            background: #712F3E;
-            /* margin: left 5; */
-            margin: 5px;
-            flex-shrink: 0;
-            scroll-snap-align: center;
-            padding: 0%;
-        }
+      .box {
+        border-radius: 8px;
+        height: 90%;
+        width: 75%;
+        color: #000000;
+        background: #ffffff90;
+        /* margin: left 5; */
+        margin: 5px;
+        flex-shrink: 0;
+        scroll-snap-align: center;
+        padding: 20px 20px;
+      }
 
-        .dots {
-            display: flex;
-            justify-content: center;
-        }
+      .dots {
+        display: flex;
+        justify-content: center;
+      }
 
-        .dot {
-            all: unset;
-            margin-right: 5px;
-            height: 10px;
-            width: 10px;
-            border-radius: 10px;
-            background: gray;
-            margin-top: 10px;
-        }
+      .dot {
+        all: unset;
+        margin-right: 5px;
+        height: 10px;
+        width: 10px;
+        border-radius: 10px;
+        background: gray;
+        margin-top: 10px;
+      }
 
-        .dot.current-box {
-            outline: 15px solid blue;
-        }
+      .dot.current-box {
+        outline: 15px solid blue;
+      }
 
-        .row {
-            width: 100%;
-        }
+      .row {
+        width: 100%;
+      }
 
-        h2 {
-            /* text-align: center; */
-            color: #e1dbd1;
-            font-size: 40px;
-            font-weight: 700;
-            padding-left: 40px;
-        }
+      .carousel-title {
+        margin-left: 20px;
+      }
 
-        h3 {
-            color: #e1dbd1;
-            font-size: 30px;
-            font-weight: 700;
-            padding-left: 40px;
-        }
+      h2 {
+        /* text-align: center; */
+        color: #000000;
+        font-size: 40px;
+        font-weight: 500;
+      }
 
-        p {
-            color: #e1dbd1;
-            font-size: larger;
-            font-weight: 700;
-            padding-left: 40px;
-        }
+      h3 {
+        color: #000000;
+        font-size: 30px;
+        font-weight: 500;
+      }
+
+      p {
+        color: #000000;
+        font-size: larger;
+      }
+
+      main {
+        margin-top: 56px;
+      }
     </style>
+  </head>
 
-
-</head>
-
-<body>
+  <body>
     <!------------------------------>
     <!-- Your HTML Layout go here -->
     <!------------------------------>
     <!-- Navbar -->
-    <nav id="navbarPlaceholder">
-    </nav>
+    <nav id="navbarPlaceholder"></nav>
 
     <main>
-
+      <div class="carousel-container">
         <div class="row">
-            <h1>Tips For You</h1>
+          <h2 class="carousel-title">Tips For You</h2>
         </div>
-
-
-        <div id="carouseldynamic" class="carousel">
-
-        </div>
+        <div id="carouseldynamic" class="carousel"></div>
+      </div>
+      <div class="carousel-container">
         <div class="row">
-            <h2>Tips For Everyone</h2>
+          <h2 class="carousel-title">Tips For Everyone</h2>
         </div>
         <div class="carousel">
-            <div class="card-body box">
-                <h3 class="card-title">Make Social Connection</h3>
-                <p class="card-text"> Phone calls and social networks have their place, but few things can beat the
-                    stress-busting, mood-boosting power of quality face-to-face time with other people, especially those
-                    you love and people who energize you.</p>
-            </div>
-
-            <div class="card-body box">
-                <h3 class="card-title">Stay active</h3>
-                <p class="card-text"> Staying active is as good for the brain as it is for the body. Regular exercise or
-                    activity can have a major impact on your mental and emotional health, relieve stress, improve
-                    memory,
-                    and help you sleep better.</p>
-            </div>
-
-            <div class="card-body box">
-                <h3 class="card-title">Talk to Someone</h3>
-                <p class="card-text">Talk to a friendly face. If you have concerns, stresses or worries, sharing these
-                    with someone who cares is one of the most effective ways to calm your nervous system and relieve
-                    stress.</p>
-            </div>
-
-            <div class="card-body box">
-                <h3 class="card-title">Appeal to Your Senses</h3>
-                <p class="card-text">Does listening to an uplifting song make you feel calm? Does squeezing a stress
-                    ball help you feel centred? What about taking a walk in nature and enjoying the sights and sounds of
-                    the trees? Everyone responds to sensory input a little differently, so experiment to find what works
-                    best for you.</p>
-            </div>
-            <div class="card-body box">
-                <h3 class="card-title">Take Up a Relaxation Practice</h3>
-                <p class="card-text">Yoga, mindfulness, meditation and deep breathing can help reduce overall levels of
-                    stress.</p>
-            </div>
-            <div class="card-body box">
-                <h3 class="card-title">Make Leisure and Contemplation a Priority</h3>
-                <p class="card-text">We can all be guilty of being "too busy" to take some down time, but leisure time
-                    is a necessity for emotional and mental health. Take some time to relax, contemplate, and pay
-                    attention to the positive things as you go about your day — even the small things. Write them down
-                    if you can, because they can be easy to forget. Then reflect on them later if your mood is in need
-                    of a boost. </p>
-            </div>
-            <div class="card-body box">
-                <h3 class="card-title">Get Enough Sleep</h3>
-                <p class="card-text">It matters more than you think. Sleep is our body and mind's best way to recharge
-                    and rejuvenate. One way to get sleep better is to take a break from the stimulation of screens — TV,
-                    phones, tablets or computers — in the hours before bedtime. Consider reading or listening to
-                    relaxing music instead. </p>
-            </div>
-            <div class="box">8</div>
+          <div class="card-body box">
+            <h3 class="card-title">Make Social Connection</h3>
+            <p class="card-text">
+              Phone calls and social networks have their place, but few things
+              can beat the stress-busting, mood-boosting power of quality
+              face-to-face time with other people, especially those you love and
+              people who energize you.
+            </p>
+          </div>
+          <div class="card-body box">
+            <h3 class="card-title">Stay active</h3>
+            <p class="card-text">
+              Staying active is as good for the brain as it is for the body.
+              Regular exercise or activity can have a major impact on your
+              mental and emotional health, relieve stress, improve memory, and
+              help you sleep better.
+            </p>
+          </div>
+          <div class="card-body box">
+            <h3 class="card-title">Talk to Someone</h3>
+            <p class="card-text">
+              Talk to a friendly face. If you have concerns, stresses or
+              worries, sharing these with someone who cares is one of the most
+              effective ways to calm your nervous system and relieve stress.
+            </p>
+          </div>
+          <div class="card-body box">
+            <h3 class="card-title">Appeal to Your Senses</h3>
+            <p class="card-text">
+              Does listening to an uplifting song make you feel calm? Does
+              squeezing a stress ball help you feel centred? What about taking a
+              walk in nature and enjoying the sights and sounds of the trees?
+              Everyone responds to sensory input a little differently, so
+              experiment to find what works best for you.
+            </p>
+          </div>
+          <div class="card-body box">
+            <h3 class="card-title">Take Up a Relaxation Practice</h3>
+            <p class="card-text">
+              Yoga, mindfulness, meditation and deep breathing can help reduce
+              overall levels of stress.
+            </p>
+          </div>
+          <div class="card-body box">
+            <h3 class="card-title">
+              Make Leisure and Contemplation a Priority
+            </h3>
+            <p class="card-text">
+              We can all be guilty of being "too busy" to take some down time,
+              but leisure time is a necessity for emotional and mental health.
+              Take some time to relax, contemplate, and pay attention to the
+              positive things as you go about your day — even the small things.
+              Write them down if you can, because they can be easy to forget.
+              Then reflect on them later if your mood is in need of a boost.
+            </p>
+          </div>
+          <div class="card-body box">
+            <h3 class="card-title">Get Enough Sleep</h3>
+            <p class="card-text">
+              It matters more than you think. Sleep is our body and mind's best
+              way to recharge and rejuvenate. One way to get sleep better is to
+              take a break from the stimulation of screens — TV, phones, tablets
+              or computers — in the hours before bedtime. Consider reading or
+              listening to relaxing music instead.
+            </p>
+          </div>
+          <div class="box">8</div>
         </div>
+      </div>
+      <div class="carousel-container">
         <div class="row">
-            <h2>Tips For Everyone</h2>
+          <h2 class="carousel-title">Tips For Everyone</h2>
         </div>
         <div class="carousel">
-            <div class="card-body box">
-                <h3 class="card-title">Make Social Connection</h3>
-                <p class="card-text"> Phone calls and social networks have their place, but few things can beat the
-                    stress-busting, mood-boosting power of quality face-to-face time with other people, especially those
-                    you love and people who energize you.</p>
-            </div>
-            <div class="card-body box">
-                <h3 class="card-title">Talk to Someone</h3>
-                <p class="card-text">Talk to a friendly face. If you have concerns, stresses or worries, sharing these
-                    with someone who cares is one of the most effective ways to calm your nervous system and relieve
-                    stress.</p>
-            </div>
-            <div class="card-body box">
-                <h3 class="card-title">Appeal to Your Senses</h3>
-                <p class="card-text">Does listening to an uplifting song make you feel calm? Does squeezing a stress
-                    ball help you feel centred? What about taking a walk in nature and enjoying the sights and sounds of
-                    the trees? Everyone responds to sensory input a little differently, so experiment to find what works
-                    best for you.</p>
-            </div>
-            <div class="card-body box">
-                <h3 class="card-title">Take Up a Relaxation Practice</h3>
-                <p class="card-text">Yoga, mindfulness, meditation and deep breathing can help reduce overall levels of
-                    stress.</p>
-            </div>
-            <div class="card-body box">
-                <h3 class="card-title">Make Leisure and Contemplation a Priority</h3>
-                <p class="card-text">We can all be guilty of being "too busy" to take some down time, but leisure time
-                    is a necessity for emotional and mental health. Take some time to relax, contemplate, and pay
-                    attention to the positive things as you go about your day — even the small things. Write them down
-                    if you can, because they can be easy to forget. Then reflect on them later if your mood is in need
-                    of a boost. </p>
-            </div>
-            <div class="card-body box">
-                <h3 class="card-title">Get Enough Sleep</h3>
-                <p class="card-text">It matters more than you think. Sleep is our body and mind's best way to recharge
-                    and rejuvenate. One way to get sleep better is to take a break from the stimulation of screens — TV,
-                    phones, tablets or computers — in the hours before bedtime. Consider reading or listening to
-                    relaxing music instead. </p>
-            </div>
-            <div class="box">text2</div>
+          <div class="card-body box">
+            <h3 class="card-title">Make Social Connection</h3>
+            <p class="card-text">
+              Phone calls and social networks have their place, but few things
+              can beat the stress-busting, mood-boosting power of quality
+              face-to-face time with other people, especially those you love and
+              people who energize you.
+            </p>
+          </div>
+          <div class="card-body box">
+            <h3 class="card-title">Talk to Someone</h3>
+            <p class="card-text">
+              Talk to a friendly face. If you have concerns, stresses or
+              worries, sharing these with someone who cares is one of the most
+              effective ways to calm your nervous system and relieve stress.
+            </p>
+          </div>
+          <div class="card-body box">
+            <h3 class="card-title">Appeal to Your Senses</h3>
+            <p class="card-text">
+              Does listening to an uplifting song make you feel calm? Does
+              squeezing a stress ball help you feel centred? What about taking a
+              walk in nature and enjoying the sights and sounds of the trees?
+              Everyone responds to sensory input a little differently, so
+              experiment to find what works best for you.
+            </p>
+          </div>
+          <div class="card-body box">
+            <h3 class="card-title">Take Up a Relaxation Practice</h3>
+            <p class="card-text">
+              Yoga, mindfulness, meditation and deep breathing can help reduce
+              overall levels of stress.
+            </p>
+          </div>
+          <div class="card-body box">
+            <h3 class="card-title">
+              Make Leisure and Contemplation a Priority
+            </h3>
+            <p class="card-text">
+              We can all be guilty of being "too busy" to take some down time,
+              but leisure time is a necessity for emotional and mental health.
+              Take some time to relax, contemplate, and pay attention to the
+              positive things as you go about your day — even the small things.
+              Write them down if you can, because they can be easy to forget.
+              Then reflect on them later if your mood is in need of a boost.
+            </p>
+          </div>
+          <div class="card-body box">
+            <h3 class="card-title">Get Enough Sleep</h3>
+            <p class="card-text">
+              It matters more than you think. Sleep is our body and mind's best
+              way to recharge and rejuvenate. One way to get sleep better is to
+              take a break from the stimulation of screens — TV, phones, tablets
+              or computers — in the hours before bedtime. Consider reading or
+              listening to relaxing music instead.
+            </p>
+          </div>
+          <div class="box">text2</div>
         </div>
-        </div>
+      </div>
+      <div class="carousel-container">
         <div class="row">
-            <h2>Other tips</h2>
+          <h2 class="carousel-title">Other tips</h2>
         </div>
         <div class="carousel">
-            <div class="card-body box">
-                <h3 class="card-title">Option 2</h3>
-                <p class="card-text"> Stress dealing with Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Inventore, ea nemo? Dolorem esse rem necessitatibus magni sit dolore consequuntur error tempore,
-                    voluptate, tempora animi veniam totam. Necessitatibus delectus et officiis!</p>
-            </div>
-            <div class="card-body box">
-                <h3 class="card-title">Talk to Someone</h3>
-                <p class="card-text">Talk to a friendly face. If you have concerns, stresses or worries, sharing these
-                    with someone who cares is one of the most effective ways to calm your nervous system and relieve
-                    stress.</p>
-            </div>
-            <div class="card-body box">
-                <h3 class="card-title">Appeal to Your Senses</h3>
-                <p class="card-text">Does listening to an uplifting song make you feel calm? Does squeezing a stress
-                    ball help you feel centred? What about taking a walk in nature and enjoying the sights and sounds of
-                    the trees? Everyone responds to sensory input a little differently, so experiment to find what works
-                    best for you.</p>
-            </div>
-            <div class="card-body box">
-                <h3 class="card-title">Take Up a Relaxation Practice</h3>
-                <p class="card-text">Yoga, mindfulness, meditation and deep breathing can help reduce overall levels of
-                    stress.</p>
-            </div>
-            <div class="card-body box">
-                <h3 class="card-title">Make Leisure and Contemplation a Priority</h3>
-                <p class="card-text">We can all be guilty of being "too busy" to take some down time, but leisure time
-                    is a necessity for emotional and mental health. Take some time to relax, contemplate, and pay
-                    attention to the positive things as you go about your day — even the small things. Write them down
-                    if you can, because they can be easy to forget. Then reflect on them later if your mood is in need
-                    of a boost. </p>
-            </div>
-            <div class="card-body box">
-                <h3 class="card-title">Get Enough Sleep</h3>
-                <p class="card-text">It matters more than you think. Sleep is our body and mind's best way to recharge
-                    and rejuvenate. One way to get sleep better is to take a break from the stimulation of screens — TV,
-                    phones, tablets or computers — in the hours before bedtime. Consider reading or listening to
-                    relaxing music instead. </p>
-            </div>
-            <div class="box">text2</div>
+          <div class="card-body box">
+            <h3 class="card-title">Option 2</h3>
+            <p class="card-text">
+              Stress dealing with Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Inventore, ea nemo? Dolorem esse rem
+              necessitatibus magni sit dolore consequuntur error tempore,
+              voluptate, tempora animi veniam totam. Necessitatibus delectus et
+              officiis!
+            </p>
+          </div>
+          <div class="card-body box">
+            <h3 class="card-title">Talk to Someone</h3>
+            <p class="card-text">
+              Talk to a friendly face. If you have concerns, stresses or
+              worries, sharing these with someone who cares is one of the most
+              effective ways to calm your nervous system and relieve stress.
+            </p>
+          </div>
+          <div class="card-body box">
+            <h3 class="card-title">Appeal to Your Senses</h3>
+            <p class="card-text">
+              Does listening to an uplifting song make you feel calm? Does
+              squeezing a stress ball help you feel centred? What about taking a
+              walk in nature and enjoying the sights and sounds of the trees?
+              Everyone responds to sensory input a little differently, so
+              experiment to find what works best for you.
+            </p>
+          </div>
+          <div class="card-body box">
+            <h3 class="card-title">Take Up a Relaxation Practice</h3>
+            <p class="card-text">
+              Yoga, mindfulness, meditation and deep breathing can help reduce
+              overall levels of stress.
+            </p>
+          </div>
+          <div class="card-body box">
+            <h3 class="card-title">
+              Make Leisure and Contemplation a Priority
+            </h3>
+            <p class="card-text">
+              We can all be guilty of being "too busy" to take some down time,
+              but leisure time is a necessity for emotional and mental health.
+              Take some time to relax, contemplate, and pay attention to the
+              positive things as you go about your day — even the small things.
+              Write them down if you can, because they can be easy to forget.
+              Then reflect on them later if your mood is in need of a boost.
+            </p>
+          </div>
+          <div class="card-body box">
+            <h3 class="card-title">Get Enough Sleep</h3>
+            <p class="card-text">
+              It matters more than you think. Sleep is our body and mind's best
+              way to recharge and rejuvenate. One way to get sleep better is to
+              take a break from the stimulation of screens — TV, phones, tablets
+              or computers — in the hours before bedtime. Consider reading or
+              listening to relaxing music instead.
+            </p>
+          </div>
+          <div class="box">text2</div>
         </div>
+      </div>
     </main>
     <script src="./scripts/skeleton.js"></script>
     <script src="./scripts/firebaseAPI.js"></script>
     <script src="./scripts/loadTips.js"></script>
     <script src="./scripts/tips_main.js"></script>
-
-
-</body>
-
+  </body>
 </html>
