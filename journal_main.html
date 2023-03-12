@@ -38,7 +38,7 @@
     <nav id="navbarPlaceholder"></nav>
     <!-- previousJournal -->
     <div class="container">
-        <div style="color:black">
+        <div class="container-journal">
             <h1 style="margin-top: 100px;">My Journal Page</h1> <br>
             <h6 class="mb-3">Life can get busy and overwhelming at times. Just remember that
                 whenever
@@ -60,13 +60,13 @@
             <textarea class="form-control mt-2 mb-3" rows="7" id="journal-input"></textarea>
             <span id="warning"></span>
             <div class="mb-3 hidden-block occupation-check" style="display: flex;justify-content: space-between;">
-                <span>Choose your occupation before your journal: </span>
-                <select class="occupation-choice" name="state" style="width:30%">
-                    <option value="" selected disabled hidden>Choose here</option>
+                <span></span>
+                <select class="occupation-choice" name="state" style="width:50%">
+                    <option value="" selected disabled hidden>Choose your occupation</option>
                     <option>BCIT instructor</option>
                 </select>
             </div>
-            <div style="display: flex;justify-content: space-between;">
+            <div style="display: flex;justify-content: space-between;color: white">
                 <input class="image_btn" type="file" accept="image/*" id="uploadimage">
                 <p class="submit_btn" onclick="add_journal()">Submit</p>
             </div>
@@ -80,11 +80,13 @@
                     never be shared. <b>Your privacy is our top priority.</b></small>
             </div>
             <div class="mt-3 mb-4">
-                <h5 class=" text-uppercase">Journals shared by colleagues and peers (<span id="occupation-on-title"></span>)</h5>
+                <h5 class=" text-uppercase" style="color:white">Journals shared by colleagues and peers <span
+                        id="occupation-on-title"></span></h5>
                 <!-- Gradient divider -->
-                <hr data-content="AND" class="hr-text">
+                <hr data-content="AND" class="hr-text" style="color:white;font-weight: bolder;">
             </div>
         </div>
+        <h4 id="without-occupation" style="color:white"></h4>
         <div id="previous-journal-go-here"> </div>
     </div>
     <!-- template   -->

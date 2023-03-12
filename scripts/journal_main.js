@@ -6,6 +6,7 @@ function displayJournalDynamically(collection) {
             let cardTemplate = document.getElementById("PreviousJournalPlaceHolder");
             if (occupation_stored == undefined) {
                 occupation_stored = ""
+                $(`#without-occupation`).html(`Select your occupation and start journaling anonymously today 😄`)
             }
             db.collection(collection).limit(5).where("occupation", "==", occupation_stored)// UserID) //.orderBy("timestamp", "desc")
                 .get()
@@ -117,10 +118,9 @@ function add_journal() {
                                     console.log('Added occupation to Firestore.');
                                 })
                         }
-                    }).then(db.collection("users").doc(firebase.auth().currentUser.uid).get().then(function (querySnapshot) {
-                        occupation_stored = querySnapshot.data().occupation
+                    }).then(db.collection("users").doc(firebase.auth().currentUser.uid).get().then(function () {
                         db.collection("journals").add({
-                            content: $("#journal-input").val(),
+                            content: $("#journal-input").val().replace(/(?:\r\n|\r|\n)/g, '<br>'),
                             picture: "",
                             tag: $("#mood-tag").val(),
                             occupation: occupation_stored,
@@ -129,7 +129,8 @@ function add_journal() {
                             uploadPic(journal.id)
                             console.log("Journal added")
                             $("#warning").html(`<p style="color:lightgreen; font-weight: 600;">Thank you for sharing your thoughts and feelings with us. 
-                             Your words remind us that work can be both challenging and rewarding. </p>`)
+                             Your words remind us that work can be both challenging and rewarding. </p> <a href="journal_main.html" class="refresh">Refresh to see your post</a>`)
+
                         })
                     }))
                 })
@@ -157,7 +158,7 @@ $(document).ready(function () {
                 $(".occupation-check").removeClass("hidden-block")
             }
             else {
-                $("#occupation-on-title").text(`${querySnapshot.data().occupation}`)
+                $("#occupation-on-title").text(`(${querySnapshot.data().occupation})`)
             }
         })
     })
