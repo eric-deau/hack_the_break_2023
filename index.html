@@ -51,39 +51,45 @@
   <body>
     <!-- <div class="gallery-container"></div> -->
 
-    <div class="jumbotron pt-5 pb-5">
-      <h1 style="text-align: center">
-        Good Evening, <span id="name">friend</span>
+    <div id="greeting">
+      <div class="jumbotron pt-5 pb-5">
+        <h1 style="text-align: center">
+          We're so glad you're here, <span id="name">friend</span>
+        </h1>
+      </div>
+    </div>
+    <div id="instructions">
+      <h1 style="text-align: center; font-weight: 400">
+        What would you like to do?<br />&nbsp;
       </h1>
     </div>
-    <div class="index_card text-center">
-      <a
-        href="./tips_main.html"
-        class="btn btn-primary btn-outline-danger"
-        role="button"
-        style="--bs-btn-padding-y: 2rem; --bs-btn-padding-x: 8rem"
-        >Tips</a
-      >
+    <div id="buttons">
+      <div class="text-center">
+        <a
+          href="./tips_main.html"
+          class="btn btn-primary btn-outline-danger"
+          role="button"
+          >Tips</a
+        >
+      </div>
+      <div class="text-center">
+        <a
+          href="./survey_main.html"
+          class="btn btn-primary btn-outline-danger"
+          role="button"
+          >Survey</a
+        >
+      </div>
+      <div class="text-center">
+        <a
+          href="./journal_main.html"
+          class="btn btn-primary btn-outline-danger"
+          role="button"
+          >Journal</a
+        >
+      </div>
     </div>
-    <div class="index_card text-center">
-      <a
-        href="./survey_main.html"
-        class="btn btn-primary btn-outline-danger"
-        role="button"
-        style="--bs-btn-padding-y: 2rem; --bs-btn-padding-x: 8rem"
-        >Survey</a
-      >
-    </div>
-    <div class="index_card text-center">
-      <a
-        href="./journal_main.html"
-        class="btn btn-primary btn-outline-danger"
-        role="button"
-        style="--bs-btn-padding-y: 2rem; --bs-btn-padding-x: 8rem"
-        >Journal</a
-      >
-    </div>
-    <script src="./scripts/index.js"></script>
     <script src="./scripts/firebaseAPI.js"></script>
+    <script src="./scripts/index.js"></script>
   </body>
 </html>
