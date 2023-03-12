@@ -33,7 +33,7 @@
             overflow: auto;
             display: flex;
             scroll-snap-type: x mandatory;
-            height: 300px;
+            height: 400px;
             width: 95%;
         }
 
@@ -58,7 +58,7 @@
             /* margin: left 5; */
             margin-right: 5px;
             flex-shrink: 0;
-            scroll-snap-align: start;
+            scroll-snap-align: center;
         }
 
         .dots {
@@ -179,9 +179,7 @@
         <div class="box"></div>
         <div class="box"></div>
     </div>
-    <div class="dots">
-        <button class="dot" href="https://www.google.com/"></button>
-        <!-- <a href="https://www.google.com/" class="" role="button"></a> -->
+    <!-- <div class="dots" id="dots_1">
         <button class="dot"></button>
         <button class="dot"></button>
         <button class="dot"></button>
@@ -190,6 +188,27 @@
         <button class="dot"></button>
         <button class="dot"></button>
         <button class="dot"></button>
+        <button class="dot"></button> -->
+        <!-- <script>
+            const dots = document.querySelector('.dots');
+            dots.addEventListener('click', e => {
+                const target = e.target;
+                console.log('test_blk1');
+                if (!target.matches('.dot')) {
+                    console.log('not a dot');
+                    return;
+                }
+                console.log('test2');
+                const index = Array.from(dots.children).indexOf(target);
+                const selector = `.box:nth-child(${18 + 1})`;
+                const box = document.querySelector(selector)
+
+                box.scrollIntoView({
+                    behavior: 'smooth',
+                    inline: 'start'
+                })
+            })
+        </script> -->
     </div>
     <div class="row">
         <h2>Tips For Everyone</h2>
@@ -244,7 +263,7 @@
         <div class="box"></div>
         <div class="box"></div>
     </div>
-    <div class="dots">
+    <!-- <div class="dots" id="dots_2">
         <button class="dot"></button>
         <button class="dot"></button>
         <button class="dot"></button>
@@ -253,7 +272,27 @@
         <button class="dot"></button>
         <button class="dot"></button>
         <button class="dot"></button>
-        <button class="dot"></button>
+        <button class="dot"></button> -->
+        <!-- <script>
+            const dots2 = document.querySelector('#dots_2');
+            dots2.addEventListener('click', e => {
+                const target = e.target;
+                console.log('test');
+                if (!target.matches('.dot')) {
+                    console.log('not a dot');
+                    return;
+                }
+                console.log('test2');
+                const index = Array.from(dots2.children).indexOf(target);
+                const selector = `.box:nth-child(${index + 1})`;
+                const box = document.querySelector(selector)
+
+                box.scrollIntoView({
+                    behavior: 'smooth',
+                    // inline: 'start'
+                })
+            })
+        </script> -->
     </div>
     <div class="row">
         <h1>Other tips</h1>
@@ -308,7 +347,8 @@
         <div class="box"></div>
         <div class="box"></div>
     </div>
-    <div class="dots">
+    <!-- <div class="dots" id="dots_3>
+        <button class=" dot"></button>
         <button class="dot"></button>
         <button class="dot"></button>
         <button class="dot"></button>
@@ -317,59 +357,31 @@
         <button class="dot"></button>
         <button class="dot"></button>
         <button class="dot"></button>
-        <button class="dot"></button>
-    </div>
+    </div> -->
 
-    <!-- <div class="card">
-            
-        </div>
-
-        <div class="card">
-        </div>
-
-        <div class="card">
-            <div class="card-body">
-                <h3 class="card-title">Take Up a Relaxation Practice</h3>
-                <p class="card-text">Yoga, mindfulness, meditation and deep breathing can help reduce overall levels of
-                    stress.</p>
-            </div>
-        </div>
-
-        <div class="card">
-        </div>
-
-        <div class="card">
-        </div>
-
-        <div class="card">
-        </div>
-
-        
-        
-        
-        <footer id="footerBeforeLoginPlaceholder"></footer> -->
-
-
-    <!-- <script src="./scripts/script.js"></script> -->
-    <script>
-        const dots = document.querySelector('.dots');
-        dots.addEventListener('click', e => {
+    <!-- <script>
+        const dots2 = document.querySelector('#dots_2');
+        dots2.addEventListener('click', e => {
             const target = e.target;
+            console.log('test');
             if (!target.matches('.dot')) {
+                console.log('not a dot');
                 return;
             }
-
-            const index = Array.from(dots.children).indexOf(target);
+            console.log('test2');
+            const index = Array.from(dots2.children).indexOf(target);
             const selector = `.box:nth-child(${index + 1})`;
             const box = document.querySelector(selector)
+
             box.scrollIntoView({
                 behavior: 'smooth',
                 inline: 'start'
             })
         })
-    </script>
+
+    </script> -->
     <script src="./scripts/skeleton.js"></script>
-    <script src="./scripts/firebaseAPI.js"></script>
+    <script src="./scripts/tips_main.js"></script>
 
 
 </body>

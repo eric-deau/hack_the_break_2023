@@ -63,13 +63,13 @@ main {
     margin-right: auto;
     margin-left: auto;
     width: 80%;
-    background-color: #ffffff80!important;
+    background-color: #ffffff95!important;
 }
 
 #submit input {
     padding: 10px 20px;
     border-radius: 5px;
-    background-color: #ffffff80;
+    background-color: #ffffff95;
     /* border: 3px solid #ffffff; */
     border: none;
 }
