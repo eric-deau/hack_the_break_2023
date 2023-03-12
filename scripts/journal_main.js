@@ -78,6 +78,8 @@ function uploadPic(JournalID) {
     var storageRef = storage.ref("images/" + JournalID + ".jpg");
     if (ImageFile == undefined) {
         console.log("No image to upload")
+        $("#warning").html(`<p style="color:lightgreen; font-weight: 600;">Thank you for sharing your thoughts and feelings with us. 
+                             Your words remind us that work can be both challenging and rewarding. </p> <a href="journal_main.html" class="refresh">Refresh to see your post</a>`)
         return
     }
     storageRef.put(ImageFile)
@@ -91,6 +93,8 @@ function uploadPic(JournalID) {
                     })
                         .then(function () {
                             console.log('Added pic URL to Firestore.');
+                            $("#warning").html(`<p style="color:lightgreen; font-weight: 600;">Thank you for sharing your thoughts and feelings with us. 
+                             Your words remind us that work can be both challenging and rewarding. </p> <a href="journal_main.html" class="refresh">Refresh to see your post</a>`)
                         })
                 })
         })
@@ -128,12 +132,10 @@ function add_journal() {
                         }).then(function (journal) {
                             uploadPic(journal.id)
                             console.log("Journal added")
+
                         })
                     }))
                 })
-                $("#warning").html(`<p style="color:lightgreen; font-weight: 600;">Thank you for sharing your thoughts and feelings with us. 
-                             Your words remind us that work can be both challenging and rewarding. </p> <a href="journal_main.html" class="refresh">Refresh to see your post</a>`)
-
             }
             else {
                 if ($("#mood-tag").val() == null) {
