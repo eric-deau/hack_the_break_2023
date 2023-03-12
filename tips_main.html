@@ -29,6 +29,11 @@
     <!-- Link to styles of your own -->
     <link rel="stylesheet" href="./styles/tips_main.css">
     <style>
+        * {
+            font-style: sans-serif, arial;
+            box-sizing: border-box;
+        }
+
         .carousel {
             overflow: auto;
             display: flex;
@@ -45,12 +50,14 @@
             border: 6px solid transparent;
             background-clip: content-box;
         }
+
         .carousel::-webkit-scrollbar-thumb {
             background-color: #2b2b2b;
             border-radius: 20px;
             border: 6px solid transparent;
             background-clip: content-box;
         }
+
         /* Hide scrollbar for IE, Edge and Firefox */
         .carousel {
             /* -ms-overflow-style: none; */
@@ -102,8 +109,22 @@
 
         h2 {
             /* text-align: center; */
-            color: #ffffff;
+            color: #e1dbd1;
             font-size: 40px;
+            font-weight: 700;
+            padding-left: 40px;
+        }
+
+        h3 {
+            color: #e1dbd1;
+            font-size: 30px;
+            font-weight: 700;
+            padding-left: 40px;
+        }
+
+        p {
+            color: #e1dbd1;
+            font-size: larger;
             font-weight: 700;
             padding-left: 40px;
         }
@@ -223,14 +244,6 @@
                     relaxing music instead. </p>
             </div>
             <div class="box">text2</div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
         </div>
         </div>
         <div class="row">
@@ -277,14 +290,6 @@
                     relaxing music instead. </p>
             </div>
             <div class="box">text2</div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
         </div>
     </main>
     <script src="./scripts/skeleton.js"></script>
