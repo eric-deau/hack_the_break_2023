@@ -26,6 +26,13 @@ function saveSurveyResults() {
   } else if ($("#inlineRadio5").is(":checked")) {
     Q4 = $("#inlineRadio5").val();
   }
+  db.collection("surveys").doc("surveys".uid).set({
+    emotion: Q1,
+    how_long: Q2,
+    reason: Q3,
+    stress_level: Q4,
+    timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+  })
 
   localStorage.setItem("Q4", Q4);
 }
@@ -75,3 +82,4 @@ window.onload = function () {
     }
   }
 }
+
