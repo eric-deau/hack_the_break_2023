@@ -78,13 +78,6 @@
     white-space: normal;
     font-weight: 700;
     text-align: center;
-    padding: 5px;
-    color: white;
-    background-color: #2999FF;
-}
-
-.image_btn:hover {
-    background-color: rgb(250, 117, 73);
 }
 
 body {
