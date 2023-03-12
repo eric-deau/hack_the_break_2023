@@ -28,20 +28,13 @@
 body {
     /* background-image: linear-gradient(0deg, #00000088 30%, #ffffff44 100%), url('https://picsum.photos/800'); */
     /* background-image: linear-gradient(0deg, #00000088 30%, #ffffff44 100%), url('https://images.unsplash.com/photo-1678538065976-7b9bfe8a3092?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60'); */
-<<<<<<< HEAD
     background-image: linear-gradient(0deg, #3b3b3b88 30%, #ffffff44 100%), url('https://plus.unsplash.com/premium_photo-1670444760189-8a1f5153770d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxOXx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-=======
-    background-image: linear-gradient(0deg, #00000088 30%, #ffffff44 100%), url('https://images.unsplash.com/photo-1678420669625-e6221ab74a40?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMDR8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     font-family: 'Golos Text', sans-serif;
     
->>>>>>> 5458ba67579f4434f2d88c230c01eba5d3feb0a0
 }
 
 button:hover {
